@@ -82,22 +82,6 @@ else:
         fig_explicit = px.bar(explicit_stats, x='is_explicit', y='popularity', color='is_explicit')
         st.plotly_chart(fig_explicit, use_container_width=True)
 
-    with colB:
-        st.subheader("Album Tracks vs. Singles")
-        album_stats = filtered_df.groupby('album_type')['popularity'].mean().reset_index()
-        fig_album = px.bar(album_stats, x='album_type', y='popularity', color='album_type')
-        st.plotly_chart(fig_album, use_container_width=True)
-
-# SPLIT COLUMNS: Deep Dive Analytics
-colA, colB = st.columns(2)
-
-with colA:
-    st.subheader("Explicit vs. Clean Popularity")
-    # Group by explicit flag to get average popularity
-    explicit_stats = filtered_df.groupby('is_explicit')['popularity'].mean().reset_index()
-    fig_explicit = px.bar(explicit_stats, x='is_explicit', y='popularity', color='is_explicit')
-    st.plotly_chart(fig_explicit, use_container_width=True)
-
 with colB:
     st.subheader("Album Tracks vs. Singles")
     album_stats = filtered_df.groupby('album_type')['popularity'].mean().reset_index()
