@@ -3,7 +3,7 @@ import pandas as pd
 import plotly.express as px
 
 # --- 1. PAGE CONFIGURATION ---
-st.set_page_config(page_title="Atlantic Records | US Top 50 Analytics", layout="wide")
+st.set_page_config(page_title="US Top 50 Song Trend Analytics", layout="wide")
 
 # --- 2. DATA LOADING & CACHING ---
 # Using @st.cache_data prevents the app from reloading the CSV every time a user clicks a button
@@ -16,10 +16,7 @@ def load_data():
 
 df = load_data()
 
-logo_url = "https://upload.wikimedia.org/wikipedia/commons/thumb/e/ef/Atlantic_Records_logo.svg/1200px-Atlantic_Records_logo.svg.png"
-
 # --- 3. SIDEBAR FILTERS ---
-st.sidebar.image(logo_url, width=150)
 st.sidebar.title("Dashboard Filters")
 
 # Artist Filter
@@ -40,8 +37,7 @@ if selected_artists:
 
 
 # --- 4. MAIN DASHBOARD ---
-st.image(logo_url, width=120)
-st.title("United States Top 50 Playlist Analytics")
+st.title("United States Top 50 Playlist Performance and Song Popularity Trend Analysis")
 st.markdown("Tracking ranking stability, artist dominance, and longevity for strategic release planning.")
 
 if filtered_df.empty:
