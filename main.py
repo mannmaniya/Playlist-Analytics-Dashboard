@@ -277,6 +277,29 @@ with col2:
     st.dataframe(slow_decliners[['date', 'song', 'artist', 'position', 'rank_change']].head(10).reset_index(drop=True))
 
 st.markdown("---")
+st.subheader("Project Summary & Key Insights")
+
+col_summary1, col_summary2 = st.columns(2)
+with col_summary1:
+    st.markdown("**Key Findings:**")
+    st.markdown("""
+- Long-running songs often outperform short-lived chart hits in overall listener engagement
+- Strong popularity scores generally correlate with higher ranks; outliers exist in Top 20-50
+- Artist dominance is driven by repeated playlist appearances and multiple unique songs
+- Explicit content does not automatically lower popularity; varies by artist and context
+    """)
+
+with col_summary2:
+    st.markdown("**Strategic Recommendations:**")
+    st.markdown("""
+- Prioritize songs with high chart longevity and low rank volatility for sustained marketing
+- Use popularity trend scores to identify upward momentum before reaching Top 10
+- Track artist dominance as a KPI for release timing and promotional support
+- Monitor singles vs album tracks separately; success profiles differ significantly
+    """)
+
+st.markdown("---")
 st.markdown(
-    "**Project scope:** This dashboard supports playlist timeline exploration, rank trend analysis, artist dominance overview, popularity vs rank correlation, explicit vs non-explicit performance, and content attribute benchmarking."
+    "**Dashboard Capabilities:** Playlist timeline exploration, rank trend analysis, artist dominance overview, "
+    "popularity vs rank correlation, explicit vs non-explicit performance, and content attribute benchmarking."
 )
